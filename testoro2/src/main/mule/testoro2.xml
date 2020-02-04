@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="8104ba21-3623-4f1d-8890-1ce9ec3d51d2" basePath="/api" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="testoro2Flow" doc:id="9dfb2e43-b627-4fa8-9eb8-a4e2df621b0b" >
+		<http:listener doc:name="Listener" doc:id="f1efbc9a-1468-4ac9-a882-8c97485c760e" config-ref="HTTP_Listener_config" path="/{name}"/>
+		<set-payload value="shwetha" doc:name="Set Payload" doc:id="9f14a6bb-bc8d-430a-96ca-6684f206bdc3" />
+	</flow>
+</mule>
